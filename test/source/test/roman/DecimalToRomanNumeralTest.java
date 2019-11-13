@@ -32,6 +32,9 @@ public class DecimalToRomanNumeralTest {
         check(8, "VIII");
     }
 
+    @Test
+    void minusnuberIsEmptyString() { check(-2,null);}
+
     private void check(int decimal, String expected) {
         RomanNumeral romanNumeral = new RomanNumeral(decimal);
         assertEquals(expected, romanNumeral.toString());

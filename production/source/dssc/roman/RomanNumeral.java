@@ -10,15 +10,19 @@ public class RomanNumeral {
 
     @Override
     public String toString() {
-        if(this.decimal == 0) {
-            return "";
+        try {
+            if (this.decimal == 0) {
+                return "";
+            } else if (this.decimal == 4) {
+                return "IV";
+            } else if (this.decimal >= 5 && this.decimal < 9) {
+                return "V" + "I".repeat(decimal - 5);
+            } else return "I".repeat(decimal);
+
         }
-        else if(this.decimal == 4){
-            return "IV";
+        catch(Exception e){
+            System.out.println("Error: invalid negative number");
         }
-        else if(this.decimal >= 5 && this.decimal < 9){
-            return "V"+"I".repeat(decimal-5);
-        }
-        else return "I".repeat(decimal);
+        return null;
     }
 }
