@@ -28,12 +28,13 @@ public class DecimalToRomanNumeralTest {
     }
 
     @Test
-    void eightIsVIII() {
-        check(8, "VIII");
-    }
+    void eightIsVIII() { check(8, "VIII"); }
 
     @Test
-    void minusnuberIsEmptyString() { check(-2,null);}
+    void minusnuberIsEmptyString() { check(-2,"Only numbers between 0 and 3999");}
+
+    @Test
+    void onethousandisM() {check(1000, "M");}
 
     private void check(int decimal, String expected) {
         RomanNumeral romanNumeral = new RomanNumeral(decimal);
